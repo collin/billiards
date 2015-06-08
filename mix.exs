@@ -9,7 +9,19 @@ defmodule Billiards.Mixfile do
      source_url: 'https://github.com/collin/billiards',
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     package: package]
+  end
+  
+  defp package do
+    [
+     files: ["lib", "mix.exs", "README.md", "LICENSE*", "test*", "config"],
+     contributors: ["collin"],
+     licenses: ["MIT"],
+     links: %{
+         "GitHub" => "https://github.com/collin/billiards",
+     }
+    ]
   end
 
   # Configuration for the OTP application
